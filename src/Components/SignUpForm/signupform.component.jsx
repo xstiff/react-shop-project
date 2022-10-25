@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { unstable_renderSubtreeIntoContainer } from "react-dom";
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
 import FormInput from "../FormInput/forminput.component";
+import './signupform.styles.scss'
+import Button from "../Button/button.component";
 
 const defformFields = {
     displayName: '',
@@ -52,8 +53,9 @@ const SignUp = () =>{
     }
 
     return(
-        <>
-        <h1>Sign up with your email and password</h1>
+        <div className="signup-container">
+        <h2>Dont have an account?</h2>
+        <span>Sign up with your email and password</span>
 
         <form onSubmit={(e) => {
             handleSubmit(e);
@@ -70,11 +72,13 @@ const SignUp = () =>{
             {/* <label>Confirm Password</label> */}
             <FormInput label='Confirm Password' type='password' required onChange={handleChange} name='confirmPassword' value={formFields.confirmPassword}  />
 
-            <button type="submit" onClick={()=>{
-            console.log(formFields)
-            }}>Register</button>
+            {/* <button type="submit">Register</button> */}
+
+            <Button buttonType="submit">
+                <p>Register</p>
+            </Button>
         </form>
-        </>
+        </div>
     )
 };
 
