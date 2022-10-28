@@ -5,13 +5,11 @@ import {
   signInWithRedirect,
   signInWithPopup,
   GoogleAuthProvider,
-  signInWithEmailAndPasswor,
   createUserWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
 import { doc, getDoc, setDoc, getFirestore } from "firebase/firestore";
-import { Observer } from "@firebase/util";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCymxD2l2XYjrZmIMMO4wnUA1HdeMsRqTA",

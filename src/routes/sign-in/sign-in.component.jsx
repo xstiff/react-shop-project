@@ -12,18 +12,6 @@ import "./sign-in.styles.scss";
 import LogIn from "../../Components/Log-in/Log-in.component";
 
 const SignIn = () => {
-  useEffect(() => {
-    // const FetchData = async () => {
-    //   console.log(`Here`)
-    //   const response = await getRedirectResult(auth);
-    //   console.log(`Response : ${response}`)
-    //   if (response) {
-    //     const userDocRef = await createUserDocumentFromAuth(response.user)
-    //   }
-    // }
-    // FetchData().catch(console.error);
-  }, []);
-
   return (
     <div className="LoginContainer">
       <LogIn />
