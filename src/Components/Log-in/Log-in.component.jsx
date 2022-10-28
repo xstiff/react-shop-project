@@ -10,11 +10,9 @@ import { useContext, useState } from "react";
 import { EmailAndPasswordSignIn } from "../../utils/firebase/firebase.utils";
 import { checkAuth } from "../../utils/firebase/firebase.utils";
 import { UserSignOut } from "../../utils/firebase/firebase.utils";
-import { UserContext } from "../../contexts/user.context";
 
 const logGoogleUser = async () => {
-  const { user } = await SignInWithGooglePopup();
-  const userDocRef = await createUserDocumentFromAuth(user);
+  await SignInWithGooglePopup();
 };
 
 const defLoginForm = {
@@ -24,8 +22,6 @@ const defLoginForm = {
 
 const LogIn = () => {
   const [LoginForm, setLoginForm] = useState(defLoginForm);
-
-  const { setCurrentUser } = useContext(UserContext);
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -52,8 +48,6 @@ const LogIn = () => {
       );
       // console.log(response);
       if (response) {
-        setCurrentUser(response.user);
-
         alert(`Success! ${response.user.email}`);
 
         // console.log('Response:', response.user);
