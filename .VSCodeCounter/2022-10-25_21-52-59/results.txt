@@ -1,0 +1,68 @@
+Date : 2022-10-25 21:52:59
+Directory : c:\Users\domin\Desktop\ecommerce\jd-clothing\src
+Total : 27 files,  669 codes, 27 comments, 184 blanks, all 880 lines
+
+Languages
++------------------+------------+------------+------------+------------+------------+
+| language         | files      | code       | comment    | blank      | total      |
++------------------+------------+------------+------------+------------+------------+
+| JavaScript React |          9 |        269 |         16 |         92 |        377 |
+| SCSS             |          9 |        230 |          1 |         44 |        275 |
+| JavaScript       |          6 |        116 |          9 |         46 |        171 |
+| XML              |          3 |         54 |          1 |          2 |         57 |
++------------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                 | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                    |         27 |        669 |         27 |        184 |        880 |
+| Components                                                                                           |         12 |        370 |          8 |        104 |        482 |
+| Components\Button                                                                                    |          2 |         55 |          1 |         12 |         68 |
+| Components\Categories                                                                                |          2 |         18 |          0 |          4 |         22 |
+| Components\CategoryItem                                                                              |          2 |         73 |          0 |         13 |         86 |
+| Components\FormInput                                                                                 |          2 |         64 |          0 |         14 |         78 |
+| Components\Log-in                                                                                    |          2 |         96 |          2 |         37 |        135 |
+| Components\SignUpForm                                                                                |          2 |         64 |          5 |         24 |         93 |
+| assets                                                                                               |          2 |         53 |          1 |          2 |         56 |
+| routes                                                                                               |          5 |        111 |          9 |         28 |        148 |
+| routes\home                                                                                          |          1 |         38 |          0 |          7 |         45 |
+| routes\navigation                                                                                    |          2 |         48 |          0 |         11 |         59 |
+| routes\sign-in                                                                                       |          2 |         25 |          9 |         10 |         44 |
+| utils                                                                                                |          1 |         60 |          1 |         22 |         83 |
+| utils\firebase                                                                                       |          1 |         60 |          1 |         22 |         83 |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+
+| filename                                                                                             | language         | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\App.js                                              | JavaScript       |         21 |          1 |         13 |         35 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\App.test.js                                         | JavaScript       |          7 |          0 |          2 |          9 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\Button\button.component.jsx              | JavaScript React |         14 |          0 |          7 |         21 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\Button\button.styles.scss                | SCSS             |         41 |          1 |          5 |         47 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\Categories\categories.component.jsx      | JavaScript React |         12 |          0 |          4 |         16 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\Categories\categories.style.scss         | SCSS             |          6 |          0 |          0 |          6 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\CategoryItem\category-item.component.jsx | JavaScript React |         15 |          0 |          2 |         17 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\CategoryItem\category-item.style.scss    | SCSS             |         58 |          0 |         11 |         69 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\FormInput\forminput.component.jsx        | JavaScript React |         15 |          0 |          5 |         20 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\FormInput\forminput.styles.scss          | SCSS             |         49 |          0 |          9 |         58 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\Log-in\Log-in.component.jsx              | JavaScript React |         75 |          2 |         31 |        108 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\Log-in\Log-in.styles.scss                | SCSS             |         21 |          0 |          6 |         27 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\SignUpForm\signupform.component.jsx      | JavaScript React |         56 |          5 |         23 |         84 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\SignUpForm\signupform.styles.scss        | SCSS             |          8 |          0 |          1 |          9 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\assets\crown.svg                                    | XML              |         16 |          1 |          0 |         17 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\assets\logo.svg                                     | XML              |         37 |          0 |          2 |         39 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\index.js                                            | JavaScript       |         15 |          3 |          6 |         24 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\index.scss                                          | SCSS             |         18 |          0 |          4 |         22 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\logo.svg                                            | XML              |          1 |          0 |          0 |          1 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\reportWebVitals.js                                  | JavaScript       |         12 |          0 |          2 |         14 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\routes\home\home.component.jsx                      | JavaScript React |         38 |          0 |          7 |         45 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\routes\navigation\navbar.component.jsx              | JavaScript React |         25 |          0 |          3 |         28 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\routes\navigation\navbar.styles.scss                | SCSS             |         23 |          0 |          8 |         31 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\routes\sign-in\sign-in.component.jsx                | JavaScript React |         19 |          9 |         10 |         38 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\routes\sign-in\sign-in.styles.scss                  | SCSS             |          6 |          0 |          0 |          6 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\setupTests.js                                       | JavaScript       |          1 |          4 |          1 |          6 |
+| c:\Users\domin\Desktop\ecommerce\jd-clothing\src\utils\firebase\firebase.utils.js                    | JavaScript       |         60 |          1 |         22 |         83 |
+| Total                                                                                                |                  |        669 |         27 |        184 |        880 |
++------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+

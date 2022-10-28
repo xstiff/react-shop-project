@@ -1,0 +1,29 @@
+"filename", "language", "JavaScript", "JavaScript React", "SCSS", "XML", "comment", "blank", "total"
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\App.js", "JavaScript", 21, 0, 0, 0, 1, 13, 35
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\App.test.js", "JavaScript", 7, 0, 0, 0, 0, 2, 9
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\Button\button.component.jsx", "JavaScript React", 0, 14, 0, 0, 0, 7, 21
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\Button\button.styles.scss", "SCSS", 0, 0, 41, 0, 1, 5, 47
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\Categories\categories.component.jsx", "JavaScript React", 0, 12, 0, 0, 0, 4, 16
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\Categories\categories.style.scss", "SCSS", 0, 0, 6, 0, 0, 0, 6
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\CategoryItem\category-item.component.jsx", "JavaScript React", 0, 15, 0, 0, 0, 2, 17
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\CategoryItem\category-item.style.scss", "SCSS", 0, 0, 58, 0, 0, 11, 69
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\FormInput\forminput.component.jsx", "JavaScript React", 0, 15, 0, 0, 0, 5, 20
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\FormInput\forminput.styles.scss", "SCSS", 0, 0, 49, 0, 0, 9, 58
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\Log-in\Log-in.component.jsx", "JavaScript React", 0, 75, 0, 0, 2, 31, 108
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\Log-in\Log-in.styles.scss", "SCSS", 0, 0, 21, 0, 0, 6, 27
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\SignUpForm\signupform.component.jsx", "JavaScript React", 0, 56, 0, 0, 5, 23, 84
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\Components\SignUpForm\signupform.styles.scss", "SCSS", 0, 0, 8, 0, 0, 1, 9
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\assets\crown.svg", "XML", 0, 0, 0, 16, 1, 0, 17
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\assets\logo.svg", "XML", 0, 0, 0, 37, 0, 2, 39
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\index.js", "JavaScript", 15, 0, 0, 0, 3, 6, 24
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\index.scss", "SCSS", 0, 0, 18, 0, 0, 4, 22
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\logo.svg", "XML", 0, 0, 0, 1, 0, 0, 1
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\reportWebVitals.js", "JavaScript", 12, 0, 0, 0, 0, 2, 14
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\routes\home\home.component.jsx", "JavaScript React", 0, 38, 0, 0, 0, 7, 45
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\routes\navigation\navbar.component.jsx", "JavaScript React", 0, 25, 0, 0, 0, 3, 28
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\routes\navigation\navbar.styles.scss", "SCSS", 0, 0, 23, 0, 0, 8, 31
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\routes\sign-in\sign-in.component.jsx", "JavaScript React", 0, 19, 0, 0, 9, 10, 38
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\routes\sign-in\sign-in.styles.scss", "SCSS", 0, 0, 6, 0, 0, 0, 6
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\setupTests.js", "JavaScript", 1, 0, 0, 0, 4, 1, 6
+"c:\Users\domin\Desktop\ecommerce\jd-clothing\src\utils\firebase\firebase.utils.js", "JavaScript", 60, 0, 0, 0, 1, 22, 83
+"Total", "-", 116, 269, 230, 54, 27, 184, 880
