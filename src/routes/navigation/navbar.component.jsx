@@ -6,10 +6,11 @@ import "./navbar.styles.scss";
 import { UserSignOut } from "../../utils/firebase/firebase.utils";
 import CartIcon from "../../Components/Cart-Icon/cart-icon.component";
 import CartDropdown from "../../Components/Cart-dropdown/cart-dropdown.component";
+import { CartContext } from "../../contexts/cart.context";
 
 const Nav = () => {
     const UserCtx = useContext(UserContext).CurrentUser;
-    // console.log(UserCtx);
+    const CartCtx = useContext(CartContext).isCartOpen;
 
     return (
         <Fragment>
@@ -33,8 +34,9 @@ const Nav = () => {
 
                     <CartIcon />
                 </div>
-                <CartDropdown />
             </div>
+            {CartCtx && <CartDropdown />}
+
             <Outlet />
         </Fragment>
     );
