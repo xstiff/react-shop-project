@@ -1,0 +1,46 @@
+.checkout-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    h1 {
+        width: 100%;
+        text-align: center;
+        font-size: 45px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th {
+        font-size: 20px;
+        font-weight: 800;
+        border-bottom: 1px solid gray;
+        padding: 15px;
+        text-align: center;
+    }
+    td {
+        font-weight: 400;
+        font-size: 20px;
+        text-align: center;
+        padding: 15px;
+        border-bottom: 1px solid gray;
+    }
+
+    tr:last-child td {
+        border-bottom: none;
+    }
+
+    th,
+    td {
+        width: 20%;
+    }
+    img {
+        height: 160px;
+        width: auto;
+    }
+}
