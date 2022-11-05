@@ -12,8 +12,9 @@
     }
 
     table {
-        border-collapse: collapse;
+        // border-collapse: collapse;
         width: 100%;
+        border-spacing: 0 20px;
     }
 
     th {
@@ -22,25 +23,5 @@
         border-bottom: 1px solid gray;
         padding: 15px;
         text-align: center;
-    }
-    td {
-        font-weight: 400;
-        font-size: 20px;
-        text-align: center;
-        padding: 15px;
-        border-bottom: 1px solid gray;
-    }
-
-    tr:last-child td {
-        border-bottom: none;
-    }
-
-    th,
-    td {
-        width: 20%;
-    }
-    img {
-        height: 160px;
-        width: auto;
     }
 }

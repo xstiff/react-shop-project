@@ -13,6 +13,45 @@ const IdSearch = (cartItems, product) => {
     );
 };
 
+const ReduceItems = (cartItems, product) => {
+    const doesExist = cartItems.find((x) => x.id == product.id);
+
+    if (!doesExist) return;
+    return cartItems.map((citem) =>
+        citem.id == product.id
+            ? { ...citem, quantity: citem.quantity - 1 }
+            : citem
+    );
+};
+
+const IncreaseItem = (cartItems, product) => {
+    const doesExist = cartItems.find((x) => x.id == product.id);
+
+    if (!doesExist) return;
+    return cartItems.map((citem) =>
+        citem.id == product.id
+            ? { ...citem, quantity: citem.quantity + 1 }
+            : citem
+    );
+};
+
+const CheckForZero = (cartItems) => {
+    console.log("checking for zero");
+    let Filtered = cartItems;
+    cartItems.map((x) => {
+        if (x.quantity < 1) {
+            Filtered = cartItems.filter((Item) => Item.id !== x.id);
+        }
+    });
+    console.log("IM HERE");
+    return Filtered;
+};
+
+const RemoveSearch = (cartItems, product) => {
+    const Filtered = cartItems.filter((x) => x.id !== product.id);
+    return Filtered;
+};
+
 export const CartContext = createContext({
     isCartOpen: false,
     setIsCartOpen: () => {},
@@ -35,8 +74,25 @@ export const CartProvider = ({ children }) => {
     }, [cartItems]);
 
     const addItemToCart = (product) => {
-        addItem(IdSearch(cartItems, product));
+        return addItem(IdSearch(cartItems, product));
     };
+
+    const ReduceAmount = (product) => {
+        return addItem(ReduceItems(cartItems, product));
+    };
+
+    const IncreaseAmount = (product) => {
+        return addItem(IncreaseItem(cartItems, product));
+    };
+
+    const RemoveProduct = (product) => {
+        return addItem(RemoveSearch(cartItems, product));
+    };
+
+    useEffect(() => {
+        const newCart = CheckForZero(cartItems);
+        return addItem(newCart);
+    }, [cartItems]);
 
     const value = {
         isCartOpen,
@@ -44,6 +100,9 @@ export const CartProvider = ({ children }) => {
         cartItems,
         addItemToCart,
         cartCount,
+        ReduceAmount,
+        RemoveProduct,
+        IncreaseAmount,
     };
 
     return (
