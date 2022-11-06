@@ -44,7 +44,7 @@ const Confirmation = () => {
                 </div>
                 <p className="product-name">{selectedRemove.name}</p>
                 <p className="confirm-text">
-                    The item will be&nbsp;<u>removed</u>&nbsp;from your cart.
+                    This item will be&nbsp;<b>removed</b>&nbsp;from your cart.
                 </p>
             </div>
             <div className="confirm-buttons">

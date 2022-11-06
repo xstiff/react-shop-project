@@ -8,10 +8,18 @@ import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import Confirmation from "../../Components/Confirmation/confirmation.component";
 const CheckOut = () => {
-    const { cartItems, cartCount, confirmVisible } = useContext(CartContext);
-    // const navigate = useNavigate();
+    const {
+        cartItems,
+        cartCount,
+        confirmVisible,
+        setconfirmVisible,
+        setIsCartOpen,
+    } = useContext(CartContext);
 
-    // console.log("updated visible: ", confirmVisible);
+    useEffect(() => {
+        setconfirmVisible(false);
+        setIsCartOpen(false);
+    }, []);
 
     return (
         <div className="checkout-container">

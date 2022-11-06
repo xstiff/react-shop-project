@@ -53,7 +53,6 @@ const CheckoutItem = (x) => {
                 </td>
                 <td className="checkout-price">{price * quantity}$</td>
                 <td onClick={RemoveItem} className="checkout-remove">
-                    {/* <span className="">X</span> */}
                     <FontAwesomeIcon icon={faX} className="remove-x" />
                 </td>
             </tr>
