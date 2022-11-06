@@ -17,6 +17,7 @@ const ReduceItems = (cartItems, product) => {
     const doesExist = cartItems.find((x) => x.id == product.id);
 
     if (!doesExist) return;
+
     return cartItems.map((citem) =>
         citem.id == product.id
             ? { ...citem, quantity: citem.quantity - 1 }
@@ -36,14 +37,14 @@ const IncreaseItem = (cartItems, product) => {
 };
 
 const CheckForZero = (cartItems) => {
-    console.log("checking for zero");
+    // console.log("checking for zero");
     let Filtered = cartItems;
     cartItems.map((x) => {
         if (x.quantity < 1) {
             Filtered = cartItems.filter((Item) => Item.id !== x.id);
         }
     });
-    console.log("IM HERE");
+    // console.log("IM HERE");
     return Filtered;
 };
 
@@ -58,10 +59,16 @@ export const CartContext = createContext({
     cartItems: [],
     addItem: () => {},
     cartCount: 0,
+    cartPop: false,
+    selectedRemove: {},
+    confirmVisible: false,
+    setconfirmVisible: () => {},
 });
 
 export const CartProvider = ({ children }) => {
     const [isCartOpen, setIsCartOpen] = useState(false);
+    const [selectedRemove, setselectedRemove] = useState({});
+    const [confirmVisible, setconfirmVisible] = useState(false);
     const [cartItems, addItem] = useState([]);
     const [cartCount, setcartCount] = useState(0);
 
@@ -86,6 +93,13 @@ export const CartProvider = ({ children }) => {
     };
 
     const RemoveProduct = (product) => {
+        setconfirmVisible(true);
+        // console.log("updated visible: ", confrimVisible);
+        setselectedRemove(product);
+    };
+
+    const ConfirmedRemove = (product) => {
+        setconfirmVisible(false);
         return addItem(RemoveSearch(cartItems, product));
     };
 
@@ -99,10 +113,14 @@ export const CartProvider = ({ children }) => {
         setIsCartOpen,
         cartItems,
         addItemToCart,
+        ConfirmedRemove,
         cartCount,
         ReduceAmount,
         RemoveProduct,
         IncreaseAmount,
+        selectedRemove,
+        confirmVisible,
+        setconfirmVisible,
     };
 
     return (

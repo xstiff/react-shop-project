@@ -1,0 +1,77 @@
+.confirm-container {
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    -webkit-box-shadow: 0px 1px 33px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 1px 33px 0px rgba(66, 68, 90, 1);
+    box-shadow: 0px 1px 33px 0px rgba(66, 68, 90, 1);
+    border-radius: 10px;
+    padding: 25px 0px;
+    height: auto;
+    min-width: 250px;
+    z-index: 99999;
+    color: rgb(47, 48, 57);
+
+    .remove-image-container {
+        width: 100%;
+        margin-top: 15px;
+        img {
+            width: 80px;
+            height: 80px;
+            border-radius: 80px;
+            object-fit: cover;
+        }
+    }
+
+    .confirm-icon {
+        display: flex;
+        width: 100%;
+        height: auto;
+        font-size: 90px;
+        justify-content: center;
+        margin-top: 10px;
+        user-select: none;
+        color: rgba(47, 48, 57, 0.613);
+        margin: 0px 0px 15px 0px;
+    }
+
+    .confirm-text-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-wrap: wrap;
+
+        .confirm-header {
+            display: flex;
+            width: 100%;
+            height: auto;
+            font-size: 30px;
+            text-align: center;
+            justify-content: center;
+            margin: 10px 0px 0px 0px;
+        }
+
+        .confirm-text {
+            display: flex;
+            width: 100%;
+            height: auto;
+            font-size: 20px;
+            text-align: center;
+            justify-content: center;
+        }
+    }
+
+    .confirm-buttons {
+        display: flex;
+        justify-content: center;
+        padding: 15px;
+
+        button:first-child {
+            margin-right: 15px;
+        }
+    }
+}

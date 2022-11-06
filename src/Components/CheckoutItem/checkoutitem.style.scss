@@ -6,6 +6,7 @@
         font-size: 30px;
         padding: 16px;
         font-weight: 900;
+        user-select: none;
     }
 
     .remove-x:hover {
@@ -24,13 +25,25 @@
         color: rgb(0, 255, 26);
     }
 
+    .arrow-left.disabled {
+        color: rgb(110, 110, 110);
+        cursor: not-allowed;
+    }
+    .arrow-left.disabled:hover {
+        color: rgb(110, 110, 110);
+    }
+
     .quantity {
-        font-size: 25px;
+        font-size: 30px;
+        user-select: none;
         font-weight: 700;
     }
 
     .name {
         font-size: 25px;
+    }
+    .checkout-price {
+        user-select: none;
     }
 
     td {
@@ -47,6 +60,7 @@
             height: 100%;
             // background-color: aqua;
             display: flex;
+            user-select: none;
             justify-content: center;
 
             img {
