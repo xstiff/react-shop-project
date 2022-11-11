@@ -1,1 +1,1 @@
-# My first ever ecommerce ( with instructor)
+# My react store. :)

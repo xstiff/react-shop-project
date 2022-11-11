@@ -59,6 +59,7 @@ export const CartContext = createContext({
     cartItems: [],
     addItem: () => {},
     cartCount: 0,
+    total: 0,
     cartPop: false,
     selectedRemove: {},
     confirmVisible: false,
@@ -71,6 +72,7 @@ export const CartProvider = ({ children }) => {
     const [confirmVisible, setconfirmVisible] = useState(false);
     const [cartItems, addItem] = useState([]);
     const [cartCount, setcartCount] = useState(0);
+    const [cartTotal, setcartTotal] = useState(0);
 
     useEffect(() => {
         const newCartCount = cartItems.reduce((total, currentItem) => {
@@ -78,6 +80,14 @@ export const CartProvider = ({ children }) => {
         }, 0);
 
         setcartCount(newCartCount);
+    }, [cartItems]);
+
+    useEffect(() => {
+        const newCartTotal = cartItems.reduce((total, currentItem) => {
+            return total + currentItem.quantity * currentItem.price;
+        }, 0);
+
+        setcartTotal(newCartTotal);
     }, [cartItems]);
 
     const addItemToCart = (product) => {
@@ -121,6 +131,7 @@ export const CartProvider = ({ children }) => {
         selectedRemove,
         confirmVisible,
         setconfirmVisible,
+        cartTotal,
     };
 
     return (

@@ -10,7 +10,7 @@ import Confirmation from "../../Components/Confirmation/confirmation.component";
 const CheckOut = () => {
     const {
         cartItems,
-        cartCount,
+        cartTotal,
         confirmVisible,
         setconfirmVisible,
         setIsCartOpen,
@@ -41,6 +41,10 @@ const CheckOut = () => {
                             ))}
                         </tbody>
                     </table>
+                    <div className="total-price-container">
+                        <h3 className="total-price">Total: {cartTotal}$</h3>
+                    </div>
+
                     {confirmVisible ? (
                         <Button buttonType="inverted" is_disabled="true">
                             Checkout

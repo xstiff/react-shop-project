@@ -1,5 +1,7 @@
 import "./cart-item.styles.scss";
 import { useContext } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 import { CartContext } from "../../contexts/cart.context";
 const CartItem = ({ item }) => {
     const { name, quantity, imageUrl, price } = item;
@@ -11,7 +13,6 @@ const CartItem = ({ item }) => {
                 <span className="price">
                     {quantity} x {price}$
                     <br />
-                    Total: {quantity * price}$
                 </span>
             </div>
         </div>

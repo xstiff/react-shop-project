@@ -10,6 +10,7 @@
     top: 90px;
     right: 40px;
     z-index: 5;
+    text-align: center;
 
     .empty-message {
         font-size: 18px;
@@ -26,5 +27,8 @@
 
     button {
         margin-top: auto;
+    }
+    *::-webkit-scrollbar {
+        width: 12px;
     }
 }

@@ -16,7 +16,17 @@
         width: 100%;
         border-spacing: 0 20px;
     }
+    .total-price-container {
+        width: 100%;
+        display: flex;
+        justify-content: end;
 
+        .total-price {
+            font-size: 32px;
+            margin-right: 50px;
+            float: right;
+        }
+    }
     th {
         font-size: 20px;
         font-weight: 800;
