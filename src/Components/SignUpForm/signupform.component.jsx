@@ -110,9 +110,9 @@ const SignUp = () => {
 
                 {/* <button type="submit">Register</button> */}
 
-                <Button buttonType="submit" type="submit">
+                {/* <Button buttonType="submit" type="submit">
                     <p>Register</p>
-                </Button>
+                </Button> */}
             </form>
         </div>
     );

@@ -1,12 +1,17 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Fragment, useContext } from "react";
 import { UserContext } from "../../contexts/user.context";
 import crownLogo from "../../assets/crown.svg";
-import "./navbar.styles.scss";
 import { UserSignOut } from "../../utils/firebase/firebase.utils";
 import CartIcon from "../../Components/Cart-Icon/cart-icon.component";
 import CartDropdown from "../../Components/Cart-dropdown/cart-dropdown.component";
 import { CartContext } from "../../contexts/cart.context";
+import {
+    NavigationContainer,
+    NavLinksContainer,
+    NavLink,
+    LogoContainer,
+} from "./navbar.styles";
 
 const Nav = () => {
     const UserCtx = useContext(UserContext).CurrentUser;
@@ -14,27 +19,21 @@ const Nav = () => {
 
     return (
         <Fragment>
-            <div className="navigation">
-                <Link className="logo-container" to="/">
+            <NavigationContainer>
+                <LogoContainer to="/">
                     <img src={crownLogo} alt="logo" className="logo" />
-                </Link>
-                <div className="nav-links-container">
-                    <Link className="nav-link" to="/shop">
-                        SHOP
-                    </Link>
+                </LogoContainer>
+                <NavLinksContainer>
+                    <NavLink to="/shop">Shop</NavLink>
                     {UserCtx ? (
-                        <span className="nav-link" onClick={UserSignOut}>
-                            Sign Out
-                        </span>
+                        <NavLink onClick={UserSignOut}>Log out</NavLink>
                     ) : (
-                        <Link className="nav-link" to="/sign-in">
-                            Login
-                        </Link>
+                        <NavLink to="/sign-in">Login</NavLink>
                     )}
 
                     <CartIcon />
-                </div>
-            </div>
+                </NavLinksContainer>
+            </NavigationContainer>
             {CartCtx && <CartDropdown />}
 
             <Outlet />

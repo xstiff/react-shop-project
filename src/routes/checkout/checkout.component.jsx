@@ -46,9 +46,7 @@ const CheckOut = () => {
                     </div>
 
                     {confirmVisible ? (
-                        <Button buttonType="inverted" is_disabled="true">
-                            Checkout
-                        </Button>
+                        <Button buttonType="inverted-disabled">Checkout</Button>
                     ) : (
                         <Button buttonType="inverted">Checkout</Button>
                     )}

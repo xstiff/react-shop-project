@@ -9,7 +9,6 @@ const ProductCard = ({ product }) => {
         console.log(` Adding: ${product.id}`);
         return addItemToCart(product);
     };
-    // console.log("XD");
     return (
         <div className="product-card-container">
             <img src={imageUrl} alt={name} />

@@ -49,13 +49,13 @@ const Confirmation = () => {
             </div>
             <div className="confirm-buttons">
                 <Button
-                    buttonType="yes"
+                    buttonType="confirmyes"
                     onClick={(e) => Confirmation_confirm(e)}
                 >
                     Yes
                 </Button>
                 <Button
-                    buttonType="no"
+                    buttonType="confirmno"
                     onClick={(e) => Confirmation_confirm(e)}
                 >
                     No

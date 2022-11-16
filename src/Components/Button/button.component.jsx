@@ -1,30 +1,37 @@
-import { type } from "@testing-library/user-event/dist/type";
-import "./button.styles.scss";
+import "./button.styles.jsx";
+import {
+    InvertedButton,
+    GoogleSignInButton,
+    BaseButton,
+    ConfirmNo,
+    ConfirmYes,
+    DisabledButton,
+} from "./button.styles.jsx";
 
-const BUTTON_TYPE = {
+const BUTTON_TYPE_CLASSES = {
+    base: "base",
     google: "google-sign-in",
     inverted: "inverted",
     inverteddisabled: "inverted-disabled",
     undefined: "",
-    yes: "confirmyes",
-    no: "confirmno",
+    confirmyes: "confirmyes",
+    confirmno: "confirmno",
 };
 
-const IS_DISABLED = {
-    true: "disabled",
-    false: "enabled",
-    undefined: "",
-};
+const getButton = (buttonType = BUTTON_TYPE_CLASSES.base) =>
+    ({
+        [BUTTON_TYPE_CLASSES.base]: BaseButton,
+        [BUTTON_TYPE_CLASSES.google]: GoogleSignInButton,
+        [BUTTON_TYPE_CLASSES.inverted]: InvertedButton,
+        [BUTTON_TYPE_CLASSES.confirmyes]: ConfirmYes,
+        [BUTTON_TYPE_CLASSES.confirmno]: ConfirmNo,
+        [BUTTON_TYPE_CLASSES.inverteddisabled]: DisabledButton,
+    }[buttonType]);
 
-const Button = ({ children, buttonType, is_disabled, ...Other }) => {
-    return (
-        <button
-            className={`button-container ${BUTTON_TYPE[buttonType]} ${IS_DISABLED[is_disabled]}`}
-            {...Other}
-        >
-            {children}
-        </button>
-    );
+const Button = ({ children, buttonType, ...Other }) => {
+    const CustomButton = getButton(buttonType);
+
+    return <CustomButton {...Other}>{children}</CustomButton>;
 };
 
 export default Button;
