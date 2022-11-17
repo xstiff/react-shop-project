@@ -1,28 +1,33 @@
-import "./confirmation.styles.scss";
+import "./confirmation.styles.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faWarning,
-    faExclamationCircle,
-} from "@fortawesome/free-solid-svg-icons";
+import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 import Button from "../Button/button.component";
+import { BUTTON_TYPE_CLASSES } from "../Button/button.component";
 import { useContext } from "react";
 import { CartContext } from "../../contexts/cart.context";
 
+import {
+    ConfirmButtonsContainer,
+    ConfirmContainer,
+    ConfirmText,
+    ConfirmHeader,
+    ConfirmTextContainer,
+    ProductName,
+    RemoveImageContainer,
+    RemoveIcon,
+} from "./confirmation.styles.jsx";
+
 const Confirmation = () => {
     // f(); < - Run after YES
-    const {
-        selectedRemove,
-        confirmVisible,
-        setconfirmVisible,
-        ConfirmedRemove,
-    } = useContext(CartContext);
+    const { selectedRemove, setconfirmVisible, ConfirmedRemove } =
+        useContext(CartContext);
 
     const Confirmation_confirm = (i) => {
         const closeWindow = () => {
             setconfirmVisible(false);
         };
 
-        if (i.target.innerHTML.toLowerCase() == "yes") {
+        if (i.target.innerHTML.toLowerCase() === "yes") {
             return ConfirmedRemove(selectedRemove);
         }
 
@@ -30,38 +35,38 @@ const Confirmation = () => {
     };
 
     return (
-        <div className="confirm-container">
-            <div className="confirm-icon">
+        <ConfirmContainer>
+            <RemoveIcon>
                 <FontAwesomeIcon icon={faExclamationCircle} />
-            </div>
-            <div className="confirm-text-container">
-                <h1 className="confirm-header">Are you sure?</h1>
-                <div className="remove-image-container">
+            </RemoveIcon>
+            <ConfirmTextContainer>
+                <ConfirmHeader>Are you sure?</ConfirmHeader>
+                <RemoveImageContainer>
                     <img
                         src={selectedRemove.imageUrl}
                         alt={selectedRemove.name}
                     />
-                </div>
-                <p className="product-name">{selectedRemove.name}</p>
-                <p className="confirm-text">
+                </RemoveImageContainer>
+                <ProductName>{selectedRemove.name}</ProductName>
+                <ConfirmText>
                     This item will be&nbsp;<b>removed</b>&nbsp;from your cart.
-                </p>
-            </div>
-            <div className="confirm-buttons">
+                </ConfirmText>
+            </ConfirmTextContainer>
+            <ConfirmButtonsContainer>
                 <Button
-                    buttonType="confirmyes"
+                    buttonType={BUTTON_TYPE_CLASSES.confirmyes}
                     onClick={(e) => Confirmation_confirm(e)}
                 >
                     Yes
                 </Button>
                 <Button
-                    buttonType="confirmno"
+                    buttonType={BUTTON_TYPE_CLASSES.confirmno}
                     onClick={(e) => Confirmation_confirm(e)}
                 >
                     No
                 </Button>
-            </div>
-        </div>
+            </ConfirmButtonsContainer>
+        </ConfirmContainer>
     );
 };
 

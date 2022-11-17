@@ -8,7 +8,7 @@ import {
     DisabledButton,
 } from "./button.styles.jsx";
 
-const BUTTON_TYPE_CLASSES = {
+export const BUTTON_TYPE_CLASSES = {
     base: "base",
     google: "google-sign-in",
     inverted: "inverted",

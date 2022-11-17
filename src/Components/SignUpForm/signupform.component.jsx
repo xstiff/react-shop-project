@@ -4,8 +4,8 @@ import {
     createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
 import FormInput from "../FormInput/forminput.component";
-import "./signupform.styles.scss";
 import Button from "../Button/button.component";
+import { SignUpContainer } from "./signupform.styles.jsx";
 
 const defformFields = {
     displayName: "",
@@ -59,7 +59,7 @@ const SignUp = () => {
     };
 
     return (
-        <div className="signup-container">
+        <SignUpContainer>
             <h2>Don't have an account?</h2>
             <span>Sign up with your email</span>
 
@@ -68,7 +68,6 @@ const SignUp = () => {
                     handleSubmit(e);
                 }}
             >
-                {/* <label>Display Name</label> */}
                 <FormInput
                     label="Display name"
                     type="text"
@@ -78,7 +77,6 @@ const SignUp = () => {
                     value={formFields.displayName}
                 />
 
-                {/* <label>Email</label> */}
                 <FormInput
                     label="Email"
                     type="email"
@@ -88,7 +86,6 @@ const SignUp = () => {
                     value={formFields.email}
                 />
 
-                {/* <label>Password</label> */}
                 <FormInput
                     label="Password"
                     type="password"
@@ -98,7 +95,6 @@ const SignUp = () => {
                     value={formFields.password}
                 />
 
-                {/* <label>Confirm Password</label> */}
                 <FormInput
                     label="Confirm Password"
                     type="password"
@@ -108,13 +104,11 @@ const SignUp = () => {
                     value={formFields.confirmPassword}
                 />
 
-                {/* <button type="submit">Register</button> */}
-
-                {/* <Button buttonType="submit" type="submit">
+                <Button buttonType="base" type="submit">
                     <p>Register</p>
-                </Button> */}
+                </Button>
             </form>
-        </div>
+        </SignUpContainer>
     );
 };
 

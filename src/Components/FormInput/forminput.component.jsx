@@ -1,12 +1,12 @@
-import "./forminput.styles.scss";
-
+import "./forminput.styles.jsx";
+import { Group, FormInputLabel, Input } from "./forminput.styles.jsx";
 const FormInput = ({ label, ...InputProps }) => {
-  return (
-    <div className="group">
-      <input className="form-input" placeholder=" " {...InputProps} />
-      {label && <label className={`form-input-label`}>{label}</label>}
-    </div>
-  );
+    return (
+        <Group>
+            <Input placeholder=" " {...InputProps} />
+            {label && <FormInputLabel>{label}</FormInputLabel>}
+        </Group>
+    );
 };
 
 export default FormInput;

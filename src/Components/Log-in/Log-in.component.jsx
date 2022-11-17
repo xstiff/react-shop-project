@@ -1,4 +1,4 @@
-import "./Log-in.styles.scss";
+import "./Log-in.styles.jsx";
 import FormInput from "../FormInput/forminput.component";
 import Button from "../Button/button.component";
 import {
@@ -9,7 +9,9 @@ import { createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils"
 import { useContext, useState } from "react";
 import { EmailAndPasswordSignIn } from "../../utils/firebase/firebase.utils";
 import { checkAuth } from "../../utils/firebase/firebase.utils";
-import { UserSignOut } from "../../utils/firebase/firebase.utils";
+import { BUTTON_TYPE_CLASSES } from "../Button/button.component";
+
+import { LoginContainer, ButtonsContainer } from "./Log-in.styles.jsx";
 
 const logGoogleUser = async () => {
     await SignInWithGooglePopup();
@@ -30,10 +32,6 @@ const LogIn = () => {
         setLoginForm({ ...LoginForm, [name]: value });
     };
 
-    const test = () => {
-        console.log(LoginForm);
-    };
-
     const ClearLogin = () => {
         setLoginForm(defLoginForm);
     };
@@ -46,12 +44,9 @@ const LogIn = () => {
                 LoginForm.LoginEmail,
                 LoginForm.LoginPassword
             );
-            // console.log(response);
+
             if (response) {
                 alert(`Success! ${response.user.email}`);
-
-                // console.log('Response:', response.user);
-
                 ClearLogin();
             }
         } catch (error) {
@@ -72,11 +67,10 @@ const LogIn = () => {
     };
 
     return (
-        <div className="LoginPage">
+        <LoginContainer>
             <h2>Login</h2>
             <form
                 onSubmit={(e) => {
-                    // EmailAndPasswordSignIn(e);
                     handleSubmit(e);
                 }}
             >
@@ -97,32 +91,25 @@ const LogIn = () => {
                     required
                 />
 
-                <div className="Buttons-Container">
-                    <Button type="submit" buttonType="base">
+                <ButtonsContainer>
+                    <Button type="submit">
                         <p>Login</p>
                     </Button>
 
                     <Button
-                        buttonType="google-sign-in"
+                        buttonType={BUTTON_TYPE_CLASSES.google}
                         type="button"
                         onClick={logGoogleUser}
                     >
                         <p>Login with Google</p>
                     </Button>
-                </div>
+                </ButtonsContainer>
             </form>
 
             <button onClick={checkAuth}>
                 <p>Check auth status</p>
             </button>
-            <button
-                onClick={() => {
-                    console.log(UserSignOut());
-                }}
-            >
-                <p>Sign Out</p>
-            </button>
-        </div>
+        </LoginContainer>
     );
 };
 

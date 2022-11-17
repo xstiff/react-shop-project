@@ -3,9 +3,9 @@ import { useContext } from "react";
 import { CartContext } from "../../contexts/cart.context";
 import CheckoutItem from "../../Components/CheckoutItem/CheckoutItem.component";
 import Button from "../../Components/Button/button.component";
-import { Link, useNavigate } from "react-router-dom";
+import { BUTTON_TYPE_CLASSES } from "../../Components/Button/button.component";
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import { Navigate } from "react-router-dom";
 import Confirmation from "../../Components/Confirmation/confirmation.component";
 const CheckOut = () => {
     const {
@@ -46,9 +46,15 @@ const CheckOut = () => {
                     </div>
 
                     {confirmVisible ? (
-                        <Button buttonType="inverted-disabled">Checkout</Button>
+                        <Button
+                            buttonType={BUTTON_TYPE_CLASSES.inverteddisabled}
+                        >
+                            Checkout
+                        </Button>
                     ) : (
-                        <Button buttonType="inverted">Checkout</Button>
+                        <Button buttonType={BUTTON_TYPE_CLASSES.inverted}>
+                            Checkout
+                        </Button>
                     )}
                 </>
             ) : (
