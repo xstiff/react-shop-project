@@ -1,12 +1,25 @@
 # My react store. :)
 
+Technologies:<br/>
 
-With:
+-   REACT<br/>
+-   JS ( soon app will be migrated to TypeScript )
+-   SCSS
+-   REST API
+-   FIREBASE
+-   STYLED COMPONENTS
+-   REDUX (soon)
+-   GRAPHQL (soon)
+-   STRIPE PAYMENTS (soon)
 
--   Working login
--   Working cart
--   Firebase db
--   Stripe payments
--   and more...
+Features:
 
-Demo: [soon]
+-   Working Shopping
+-   Working Cart
+-   Working Login/Register/Google
+-   Working Categories
+-   Everything stored in Firebase and accessing them real time ( prodcuts and users )
+    <br />soon more....
+
+Demo: [Here](https://transcendent-cranachan-b72955.netlify.app)
+<br/>Very early deploy.
