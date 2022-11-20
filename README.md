@@ -21,5 +21,6 @@ Features:
 -   Everything stored in Firebase and accessing them real time ( prodcuts and users )
     <br />soon more....
 
-Demo: [Here](https://transcendent-cranachan-b72955.netlify.app)
+<h1>Demo: <a href='https://jdclothing-store.netlify.app'>CLICK ME</a></h1>
+<br /> Test User => test@gmail.com : 123123
 <br/>Very early deploy.
