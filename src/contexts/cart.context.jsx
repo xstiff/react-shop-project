@@ -76,6 +76,32 @@ const cartReducer = (state, action) => {
                 ...state,
                 isCartOpen: payload,
             };
+        case "SET_SELECTED_REMOVE":
+            return {
+                ...state,
+                selectedRemove: payload,
+            };
+        case "SET_CONFIRM_VISIBLE":
+            return {
+                ...state,
+                confirmVisible: payload,
+            };
+        case "SET_CART_ITEMS":
+            return {
+                ...state,
+                cartItems: payload,
+            };
+        case "SET_CART_COUNT":
+            return {
+                ...state,
+                cartCount: payload,
+            };
+        case "SET_CART_TOTAL":
+            return {
+                ...state,
+                cartTotal: payload,
+            };
+
         default:
             throw new Error("[CartReducer] Unhandled type: ", type);
     }
@@ -83,22 +109,45 @@ const cartReducer = (state, action) => {
 
 const CART_INITIAL_VALUE = {
     isCartOpen: false,
+    cartItems: [],
+    cartCount: 0,
+    cartTotal: 0,
+    selectedRemove: {},
+    confirmVisible: false,
 };
 
 export const CartProvider = ({ children }) => {
-    // const [isCartOpen, setIsCartOpen] = useState(false);
-    const [selectedRemove, setselectedRemove] = useState({});
-    const [confirmVisible, setconfirmVisible] = useState(false);
-    const [cartItems, addItem] = useState([]);
-    const [cartCount, setcartCount] = useState(0);
-    const [cartTotal, setcartTotal] = useState(0);
+    // CART REDUCER
+    const [
+        {
+            isCartOpen,
+            cartItems,
+            cartCount,
+            cartTotal,
+            selectedRemove,
+            confirmVisible,
+        },
+        dispatch,
+    ] = useReducer(cartReducer, CART_INITIAL_VALUE);
 
-    const [{ isCartOpen }, dispatch] = useReducer(
-        cartReducer,
-        CART_INITIAL_VALUE
-    );
     const setIsCartOpen = (val) =>
         dispatch({ type: "SET_IS_CART_OPEN", payload: val });
+
+    const setselectedRemove = (val) =>
+        dispatch({ type: "SET_SELECTED_REMOVE", payload: val });
+
+    const setconfirmVisible = (val) =>
+        dispatch({ type: "SET_CONFIRM_VISIBLE", payload: val });
+
+    const addItem = (val) => dispatch({ type: "SET_CART_ITEMS", payload: val });
+
+    const setcartCount = (val) =>
+        dispatch({ type: "SET_CART_COUNT", payload: val });
+
+    const setcartTotal = (val) =>
+        dispatch({ type: "SET_CART_TOTAL", payload: val });
+
+    //END OF CART REDUCER
 
     useEffect(() => {
         const newCartCount = cartItems.reduce((total, currentItem) => {
@@ -112,7 +161,6 @@ export const CartProvider = ({ children }) => {
         const newCartTotal = cartItems.reduce((total, currentItem) => {
             return total + currentItem.quantity * currentItem.price;
         }, 0);
-
         setcartTotal(newCartTotal);
     }, [cartItems]);
 
@@ -130,7 +178,6 @@ export const CartProvider = ({ children }) => {
 
     const RemoveProduct = (product) => {
         setconfirmVisible(true);
-        // console.log("updated visible: ", confrimVisible);
         setselectedRemove(product);
     };
 
