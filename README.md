@@ -8,9 +8,11 @@ Technologies:<br/>
 -   REST API
 -   FIREBASE
 -   STYLED COMPONENTS
--   REDUX (soon)
+-   REDUX\*
 -   GRAPHQL (soon)
 -   STRIPE PAYMENTS (soon)
+
+*   -   JUST IMPLEMENTED
 
 Features:
 
@@ -23,4 +25,4 @@ Features:
 
 <h1>Demo: <a href='https://jdclothing-store.netlify.app'>CLICK ME</a></h1>
 <br /> Test User => test@gmail.com : 123123
-<br/>Very early deploy .
+<br/>Very early deploy.

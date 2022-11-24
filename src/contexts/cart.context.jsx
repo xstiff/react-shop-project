@@ -164,6 +164,11 @@ export const CartProvider = ({ children }) => {
         setcartTotal(newCartTotal);
     }, [cartItems]);
 
+    useEffect(() => {
+        const newCart = CheckForZero(cartItems);
+        return addItem(newCart);
+    }, [cartItems]);
+
     const addItemToCart = (product) => {
         return addItem(IdSearch(cartItems, product));
     };
@@ -185,11 +190,6 @@ export const CartProvider = ({ children }) => {
         setconfirmVisible(false);
         return addItem(RemoveSearch(cartItems, product));
     };
-
-    useEffect(() => {
-        const newCart = CheckForZero(cartItems);
-        return addItem(newCart);
-    }, [cartItems]);
 
     const value = {
         isCartOpen,
