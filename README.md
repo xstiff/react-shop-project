@@ -12,7 +12,7 @@ Technologies:<br/>
 -   GRAPHQL (soon)
 -   STRIPE PAYMENTS (soon)
 
-*   -   JUST IMPLEMENTED
+<p>*   -   JUST IMPLEMENTED</p>
 
 Features:
 

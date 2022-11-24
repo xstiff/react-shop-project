@@ -1,37 +1,35 @@
-import { useReducer } from "react";
-import { createContext, useState, useEffect } from "react";
-import cartItem from "../Components/Cart-item/cart-item.component";
+import { createContext, useEffect, useReducer } from "react";
 
 const IdSearch = (cartItems, product) => {
-    const doesExist = cartItems.find((x) => x.id == product.id);
+    const doesExist = cartItems.find((x) => x.id === product.id);
 
     if (!doesExist) return [...cartItems, { ...product, quantity: 1 }];
 
     return cartItems.map((citem) =>
-        citem.id == product.id
+        citem.id === product.id
             ? { ...citem, quantity: citem.quantity + 1 }
             : citem
     );
 };
 
 const ReduceItems = (cartItems, product) => {
-    const doesExist = cartItems.find((x) => x.id == product.id);
+    const doesExist = cartItems.find((x) => x.id === product.id);
 
     if (!doesExist) return;
 
     return cartItems.map((citem) =>
-        citem.id == product.id
+        citem.id === product.id
             ? { ...citem, quantity: citem.quantity - 1 }
             : citem
     );
 };
 
 const IncreaseItem = (cartItems, product) => {
-    const doesExist = cartItems.find((x) => x.id == product.id);
+    const doesExist = cartItems.find((x) => x.id === product.id);
 
     if (!doesExist) return;
     return cartItems.map((citem) =>
-        citem.id == product.id
+        citem.id === product.id
             ? { ...citem, quantity: citem.quantity + 1 }
             : citem
     );
@@ -44,8 +42,8 @@ const CheckForZero = (cartItems) => {
         if (x.quantity < 1) {
             Filtered = cartItems.filter((Item) => Item.id !== x.id);
         }
+        return Filtered;
     });
-    // console.log("IM HERE");
     return Filtered;
 };
 
