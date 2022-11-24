@@ -15,7 +15,6 @@ import { CartContext } from "../../contexts/cart.context";
 
 const CartItem = ({ item }) => {
     const { name, quantity, imageUrl, price } = item;
-
     const Cart = useContext(CartContext);
 
     const RemoveFromCart = () => {
