@@ -1,17 +1,41 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useReducer } from "react";
 import { addCollectionAndDocuments } from "../utils/firebase/firebase.utils";
 import { getCategoriesAndDocuments } from "../utils/firebase/firebase.utils";
+
 export const CategoriesContext = createContext({
     categoriesMap: {},
 });
 
+const INITIAL_STATE = {
+    categoriesMap: {},
+};
+
+const CategoryReducer = (state, action) => {
+    const { type, payload } = action;
+
+    switch (type) {
+        case "SET_CATEGORIES_MAP":
+            return {
+                ...state,
+                categoriesMap: payload,
+            };
+        default:
+            console.log(type);
+            throw new Error("[CategoryReducer] Unknown type: ", type);
+    }
+};
+
 export const CategoriesProvider = ({ children }) => {
-    const [categoriesMap, setCategoriesMap] = useState({});
+    const [{ categoriesMap }, dispatch] = useReducer(
+        CategoryReducer,
+        INITIAL_STATE
+    );
+    const setCategoriesMap = (cMap) =>
+        dispatch({ type: "SET_CATEGORIES_MAP", payload: cMap });
 
     useEffect(() => {
         const getCategoriesMap = async () => {
             const categoryMap = await getCategoriesAndDocuments();
-            // console.log(categoryMap);
             setCategoriesMap(categoryMap);
         };
         getCategoriesMap();

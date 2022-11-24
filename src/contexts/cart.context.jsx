@@ -1,3 +1,4 @@
+import { useReducer } from "react";
 import { createContext, useState, useEffect } from "react";
 import cartItem from "../Components/Cart-item/cart-item.component";
 
@@ -66,13 +67,38 @@ export const CartContext = createContext({
     setconfirmVisible: () => {},
 });
 
+const cartReducer = (state, action) => {
+    const { type, payload } = action;
+
+    switch (type) {
+        case "SET_IS_CART_OPEN":
+            return {
+                ...state,
+                isCartOpen: payload,
+            };
+        default:
+            throw new Error("[CartReducer] Unhandled type: ", type);
+    }
+};
+
+const CART_INITIAL_VALUE = {
+    isCartOpen: false,
+};
+
 export const CartProvider = ({ children }) => {
-    const [isCartOpen, setIsCartOpen] = useState(false);
+    // const [isCartOpen, setIsCartOpen] = useState(false);
     const [selectedRemove, setselectedRemove] = useState({});
     const [confirmVisible, setconfirmVisible] = useState(false);
     const [cartItems, addItem] = useState([]);
     const [cartCount, setcartCount] = useState(0);
     const [cartTotal, setcartTotal] = useState(0);
+
+    const [{ isCartOpen }, dispatch] = useReducer(
+        cartReducer,
+        CART_INITIAL_VALUE
+    );
+    const setIsCartOpen = (val) =>
+        dispatch({ type: "SET_IS_CART_OPEN", payload: val });
 
     useEffect(() => {
         const newCartCount = cartItems.reduce((total, currentItem) => {
