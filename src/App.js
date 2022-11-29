@@ -11,9 +11,7 @@ import {
 } from "./utils/firebase/firebase.utils";
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "./store/user/user.action";
-import { setCategoriesMap } from "./store/categories/categories.action";
 
-import { getCategoriesAndDocuments } from "./utils/firebase/firebase.utils";
 const App = () => {
     const dispatch = useDispatch();
 
@@ -27,14 +25,6 @@ const App = () => {
         });
 
         return unsubscribe;
-    }, []);
-
-    useEffect(() => {
-        const getCategoriesMap = async () => {
-            const categoryMap = await getCategoriesAndDocuments();
-            dispatch(setCategoriesMap(categoryMap));
-        };
-        getCategoriesMap();
     }, []);
 
     return (
