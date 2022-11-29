@@ -145,27 +145,22 @@ export const CartProvider = ({ children }) => {
     const setcartTotal = (val) =>
         dispatch({ type: "SET_CART_TOTAL", payload: val });
 
-    //END OF CART REDUCER
-
     useEffect(() => {
         const newCartCount = cartItems.reduce((total, currentItem) => {
             return total + currentItem.quantity;
         }, 0);
 
-        setcartCount(newCartCount);
-    }, [cartItems]);
-
-    useEffect(() => {
         const newCartTotal = cartItems.reduce((total, currentItem) => {
             return total + currentItem.quantity * currentItem.price;
         }, 0);
-        setcartTotal(newCartTotal);
-    }, [cartItems]);
 
-    useEffect(() => {
         const newCart = CheckForZero(cartItems);
-        return addItem(newCart);
+
+        setcartTotal(newCartTotal);
+        setcartCount(newCartCount);
+        addItem(newCart);
     }, [cartItems]);
+    //END OF CART REDUCER
 
     const addItemToCart = (product) => {
         return addItem(IdSearch(cartItems, product));
