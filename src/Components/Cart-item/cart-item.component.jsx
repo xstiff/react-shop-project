@@ -6,16 +6,13 @@ import {
     Deletion,
     ImageAndDeletionContainer,
 } from "./cart-item.styles";
-
-import { useContext } from "react";
-
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CartContext } from "../../contexts/cart.context";
+import { useSelector } from "react-redux";
 
 const CartItem = ({ item }) => {
     const { name, quantity, imageUrl, price } = item;
-    const Cart = useContext(CartContext);
+    const Cart = useSelector((state) => state.cart);
 
     const RemoveFromCart = () => {
         Cart.ConfirmedRemove(item);

@@ -7,12 +7,12 @@ import {
 } from "./cart-icon.styles";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-
+import { setIsCartOpen } from "../../store/cart/cart.selector";
 const CartIcon = () => {
     const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
 
-    const toggleCart = () => dispatch(!cart.isCartOpen);
+    const toggleCart = () => dispatch(setIsCartOpen(!cart.isCartOpen));
 
     return (
         <CartIconContainer onClick={toggleCart}>

@@ -1,28 +1,33 @@
 import "./checkoutitem.style.scss";
-import { useContext } from "react";
-import { CartContext } from "../../contexts/cart.context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faAngleRight,
     faAngleLeft,
     faX,
 } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
+import {
+    RemoveProduct,
+    IncreaseAmount,
+    ReduceAmount,
+} from "../../store/cart/cart.selector";
+import { useDispatch } from "react-redux";
 
 const CheckoutItem = (x) => {
     const { item } = x;
     const { name, quantity, price, imageUrl } = item;
+    const dispatch = useDispatch();
+    const { cartItems } = useSelector((state) => state.cart);
 
-    const Cart = useContext(CartContext);
-
-    const RemoveItem = () => {
-        Cart.RemoveProduct(item);
+    const CartRemoveItem = () => {
+        dispatch(RemoveProduct(cartItems, item));
     };
-    const IncreaseAmount = () => {
-        Cart.IncreaseAmount(item);
+    const CartIncreaseAmount = () => {
+        dispatch(IncreaseAmount(cartItems, item));
     };
 
-    const ReduceAmount = () => {
-        Cart.ReduceAmount(item);
+    const CartReduceAmount = () => {
+        dispatch(ReduceAmount(cartItems, item));
     };
 
     return (
@@ -42,17 +47,17 @@ const CheckoutItem = (x) => {
                             <FontAwesomeIcon icon={faAngleLeft} />
                         </span>
                     ) : (
-                        <span className="arrow-left" onClick={ReduceAmount}>
+                        <span className="arrow-left" onClick={CartReduceAmount}>
                             <FontAwesomeIcon icon={faAngleLeft} />
                         </span>
                     )}
                     <span className="quantity">{quantity}</span>
-                    <span className="arrow-right" onClick={IncreaseAmount}>
+                    <span className="arrow-right" onClick={CartIncreaseAmount}>
                         <FontAwesomeIcon icon={faAngleRight} />
                     </span>
                 </td>
                 <td className="checkout-price">{price * quantity}$</td>
-                <td onClick={RemoveItem} className="checkout-remove">
+                <td onClick={CartRemoveItem} className="checkout-remove">
                     <FontAwesomeIcon icon={faX} className="remove-x" />
                 </td>
             </tr>

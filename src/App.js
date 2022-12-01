@@ -11,13 +11,22 @@ import {
 } from "./utils/firebase/firebase.utils";
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "./store/user/user.action";
-
+import {
+    setcartTotal,
+    setcartCount,
+    addItem,
+    CheckForZero,
+} from "./store/cart/cart.selector";
+import { useSelector } from "react-redux";
+import { addItemToCart } from "./store/cart/cart.selector";
 const App = () => {
     const dispatch = useDispatch();
+    const cartSelector = useSelector((state) => state.cart);
+    const cartItems = cartSelector.cartItems;
 
     useEffect(() => {
         const unsubscribe = onAuthStateChangedListener((user) => {
-            console.log(user);
+            // console.log(user);
             if (user) {
                 createUserDocumentFromAuth(user);
             }
@@ -26,6 +35,24 @@ const App = () => {
 
         return unsubscribe;
     }, []);
+
+    useEffect(() => {
+        const newCartCount = cartItems.reduce((total, currentItem) => {
+            return total + currentItem.quantity;
+        }, 0);
+
+        const newCartTotal = cartItems.reduce((total, currentItem) => {
+            return total + currentItem.quantity * currentItem.price;
+        }, 0);
+
+        const newCart = CheckForZero(cartItems);
+        // console.log("NEW CART: ", newCart);
+
+        dispatch(setcartTotal(newCartTotal));
+        dispatch(setcartCount(newCartCount));
+        dispatch(addItem(newCart));
+        // console.log("CART ITEMS: ", cartItems);
+    }, [cartItems]);
 
     return (
         <Routes>

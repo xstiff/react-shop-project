@@ -3,8 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 import Button from "../Button/button.component";
 import { BUTTON_TYPE_CLASSES } from "../Button/button.component";
-import { useContext } from "react";
-import { CartContext } from "../../contexts/cart.context";
 
 import {
     ConfirmButtonsContainer,
@@ -16,11 +14,13 @@ import {
     RemoveImageContainer,
     RemoveIcon,
 } from "./confirmation.styles.jsx";
+import { useSelector } from "react-redux";
 
 const Confirmation = () => {
     // f(); < - Run after YES
-    const { selectedRemove, setconfirmVisible, ConfirmedRemove } =
-        useContext(CartContext);
+    const { selectedRemove, setconfirmVisible, ConfirmedRemove } = useSelector(
+        (state) => state.cart
+    );
 
     const Confirmation_confirm = (i) => {
         const closeWindow = () => {

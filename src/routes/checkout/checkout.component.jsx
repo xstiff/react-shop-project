@@ -1,24 +1,21 @@
 import "./checkout.styles.scss";
-import { useContext } from "react";
-import { CartContext } from "../../contexts/cart.context";
 import CheckoutItem from "../../Components/CheckoutItem/CheckoutItem.component";
 import Button from "../../Components/Button/button.component";
 import { BUTTON_TYPE_CLASSES } from "../../Components/Button/button.component";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import Confirmation from "../../Components/Confirmation/confirmation.component";
+import { useSelector, useDispatch } from "react-redux";
+import { setconfirmVisible } from "../../store/cart/cart.selector";
+import { setIsCartOpen } from "../../store/cart/cart.selector";
 const CheckOut = () => {
-    const {
-        cartItems,
-        cartTotal,
-        confirmVisible,
-        setconfirmVisible,
-        setIsCartOpen,
-    } = useContext(CartContext);
-
+    const { cartItems, cartTotal, confirmVisible } = useSelector(
+        (state) => state.cart
+    );
+    const dispatch = useDispatch();
     useEffect(() => {
-        setconfirmVisible(false);
-        setIsCartOpen(false);
+        dispatch(setconfirmVisible(false));
+        dispatch(setIsCartOpen(false));
     }, []);
 
     return (
