@@ -13,10 +13,12 @@ const ProductCard = ({ product }) => {
     const { name, price, imageUrl } = product;
     const { cartItems } = useSelector((state) => state.cart);
     const dispatch = useDispatch();
+
     const Add = () => {
         console.log(` Adding: ${product.id}`);
         return dispatch(addItemToCart(cartItems, product));
     };
+
     return (
         <ProductCardContainer>
             <img src={imageUrl} alt={name} />

@@ -11,6 +11,7 @@ import {
 
 const CartDropdown = () => {
     const { cartItems, cartTotal } = useSelector((state) => state.cart);
+    console.log("CART ITEMS: ", cartItems);
     return (
         <CartDropdownContainer>
             {cartItems.length < 1 && (

@@ -21,8 +21,8 @@ import { useSelector } from "react-redux";
 import { addItemToCart } from "./store/cart/cart.selector";
 const App = () => {
     const dispatch = useDispatch();
-    const cartSelector = useSelector((state) => state.cart);
-    const cartItems = cartSelector.cartItems;
+    // const cartSelector = useSelector((state) => state.cart);
+    const { cartItems } = useSelector((state) => state.cart);
 
     useEffect(() => {
         const unsubscribe = onAuthStateChangedListener((user) => {
@@ -37,6 +37,7 @@ const App = () => {
     }, []);
 
     useEffect(() => {
+        // console.log("[APP.JS] CART ITEMS: ", cartItems);
         const newCartCount = cartItems.reduce((total, currentItem) => {
             return total + currentItem.quantity;
         }, 0);
@@ -46,12 +47,10 @@ const App = () => {
         }, 0);
 
         const newCart = CheckForZero(cartItems);
-        // console.log("NEW CART: ", newCart);
 
         dispatch(setcartTotal(newCartTotal));
         dispatch(setcartCount(newCartCount));
         dispatch(addItem(newCart));
-        // console.log("CART ITEMS: ", cartItems);
     }, [cartItems]);
 
     return (

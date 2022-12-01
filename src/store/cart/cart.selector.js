@@ -1,5 +1,3 @@
-import { useDispatch } from "react-redux";
-
 export const setIsCartOpen = (boolean) => {
     return { type: "SET_IS_CART_OPEN", payload: boolean };
 };
@@ -33,20 +31,17 @@ export const IncreaseAmount = (cartItems, product) => {
 };
 
 export const RemoveProduct = (product) => {
-    const dispatch = useDispatch();
-    dispatch(setconfirmVisible(true));
-    return setselectedRemove(product);
+    return [setselectedRemove(product), setconfirmVisible(true)];
 };
 
 export const ConfirmedRemove = (cartItems, product) => {
-    const dispatch = useDispatch();
-    dispatch(setconfirmVisible(false));
-    return addItem(RemoveSearch(cartItems, product));
+    return [
+        addItem(RemoveSearch(cartItems, product)),
+        setconfirmVisible(false),
+    ];
 };
 
 export const IdSearch = (cartItems, product) => {
-    console.log("cartItems = ", cartItems);
-    console.log("product = ", product);
     const doesExist = cartItems.find((x) => x.id === product.id);
 
     if (!doesExist) return [...cartItems, { ...product, quantity: 1 }];
@@ -56,7 +51,8 @@ export const IdSearch = (cartItems, product) => {
             ? { ...citem, quantity: citem.quantity + 1 }
             : citem
     );
-    console.log("RESPONSE: ", res);
+
+    return res;
 };
 
 export const ReduceItems = (cartItems, product) => {

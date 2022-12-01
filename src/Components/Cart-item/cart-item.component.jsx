@@ -9,14 +9,19 @@ import {
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector } from "react-redux";
+import { ConfirmedRemove } from "../../store/cart/cart.selector";
+import { useDispatch } from "react-redux";
 
 const CartItem = ({ item }) => {
     const { name, quantity, imageUrl, price } = item;
-    const Cart = useSelector((state) => state.cart);
-
+    const { cartItems } = useSelector((state) => state.cart);
+    const dispatch = useDispatch();
     const RemoveFromCart = () => {
-        Cart.ConfirmedRemove(item);
-        console.log("Removed Item");
+        const response = ConfirmedRemove(cartItems, item);
+        dispatch(response[0]);
+        dispatch(response[1]);
+
+        // console.log("Removed Item");
     };
 
     return (

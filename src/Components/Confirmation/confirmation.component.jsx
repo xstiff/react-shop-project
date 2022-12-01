@@ -15,20 +15,27 @@ import {
     RemoveIcon,
 } from "./confirmation.styles.jsx";
 import { useSelector } from "react-redux";
+import {
+    setconfirmVisible,
+    ConfirmedRemove,
+} from "../../store/cart/cart.selector.js";
+import { useDispatch } from "react-redux";
 
 const Confirmation = () => {
     // f(); < - Run after YES
-    const { selectedRemove, setconfirmVisible, ConfirmedRemove } = useSelector(
-        (state) => state.cart
-    );
+
+    const dispatch = useDispatch();
+    const { selectedRemove, cartItems } = useSelector((state) => state.cart);
 
     const Confirmation_confirm = (i) => {
         const closeWindow = () => {
-            setconfirmVisible(false);
+            dispatch(setconfirmVisible(false));
         };
 
         if (i.target.innerHTML.toLowerCase() === "yes") {
-            return ConfirmedRemove(selectedRemove);
+            const response = ConfirmedRemove(cartItems, selectedRemove);
+            dispatch(response[0]);
+            dispatch(response[1]);
         }
 
         return closeWindow();

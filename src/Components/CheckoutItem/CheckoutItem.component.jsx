@@ -20,7 +20,10 @@ const CheckoutItem = (x) => {
     const { cartItems } = useSelector((state) => state.cart);
 
     const CartRemoveItem = () => {
-        dispatch(RemoveProduct(cartItems, item));
+        const response = RemoveProduct(item);
+        dispatch(response[0]);
+        dispatch(response[1]);
+        console.log("Dispatched cart remove item");
     };
     const CartIncreaseAmount = () => {
         dispatch(IncreaseAmount(cartItems, item));
