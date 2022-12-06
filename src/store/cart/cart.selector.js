@@ -1,45 +1,38 @@
-export const setIsCartOpen = (boolean) => {
-    return { type: "SET_IS_CART_OPEN", payload: boolean };
-};
+import { createAction } from "@reduxjs/toolkit";
 
-export const setselectedRemove = (val) => ({
-    type: "SET_SELECTED_REMOVE",
-    payload: val,
-});
+export const setIsCartOpen = (boolean) =>
+    createAction("SET_IS_CART_OPEN", boolean);
 
-export const setconfirmVisible = (val) => ({
-    type: "SET_CONFIRM_VISIBLE",
-    payload: val,
-});
+export const setselectedRemove = (val) =>
+    createAction("SET_SELECTED_REMOVE", val);
 
-export const addItem = (val) => ({ type: "SET_CART_ITEMS", payload: val });
+export const setconfirmVisible = (val) =>
+    createAction("SET_CONFIRM_VISIBLE", val);
 
-export const setcartCount = (val) => ({ type: "SET_CART_COUNT", payload: val });
+export const addItem = (val) => createAction("SET_CART_ITEMS", val);
 
-export const setcartTotal = (val) => ({ type: "SET_CART_TOTAL", payload: val });
+export const setcartCount = (val) => createAction("SET_CART_COUNT", val);
 
-export const addItemToCart = (cartItems, product) => {
-    return addItem(IdSearch(cartItems, product));
-};
+export const setcartTotal = (val) => createAction("SET_CART_TOTAL", val);
 
-export const ReduceAmount = (cartItems, product) => {
-    return addItem(ReduceItems(cartItems, product));
-};
+export const addItemToCart = (cartItems, product) =>
+    addItem(IdSearch(cartItems, product));
 
-export const IncreaseAmount = (cartItems, product) => {
-    return addItem(IncreaseItem(cartItems, product));
-};
+export const ReduceAmount = (cartItems, product) =>
+    addItem(ReduceItems(cartItems, product));
 
-export const RemoveProduct = (product) => {
-    return [setselectedRemove(product), setconfirmVisible(true)];
-};
+export const IncreaseAmount = (cartItems, product) =>
+    addItem(IncreaseItem(cartItems, product));
 
-export const ConfirmedRemove = (cartItems, product) => {
-    return [
-        addItem(RemoveSearch(cartItems, product)),
-        setconfirmVisible(false),
-    ];
-};
+export const RemoveProduct = (product) => [
+    setselectedRemove(product),
+    setconfirmVisible(true),
+];
+
+export const ConfirmedRemove = (cartItems, product) => [
+    addItem(RemoveSearch(cartItems, product)),
+    setconfirmVisible(false),
+];
 
 export const IdSearch = (cartItems, product) => {
     const doesExist = cartItems.find((x) => x.id === product.id);
@@ -89,7 +82,5 @@ export const CheckForZero = (cartItems) => {
     return Filtered;
 };
 
-export const RemoveSearch = (cartItems, product) => {
-    const Filtered = cartItems.filter((x) => x.id !== product.id);
-    return Filtered;
-};
+export const RemoveSearch = (cartItems, product) =>
+    cartItems.filter((x) => x.id !== product.id);

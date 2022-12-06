@@ -1,7 +1,7 @@
 import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils";
 import { createAction } from "@reduxjs/toolkit";
 export const setCategoriesMap = (map) => {
-    return { type: "SET_CATEGORIES_MAP", payload: map };
+    return createAction('SET_CATEGORIES_MAP', map)
 };
 
 export const FETCH_CATEGORIES_START = createAction("FETCH_CATEGORIES_START");

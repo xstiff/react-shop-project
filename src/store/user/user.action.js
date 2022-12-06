@@ -1,3 +1,5 @@
+import { createAction } from "@reduxjs/toolkit";
+
 export const setCurrentUser = (user) => {
-    return { type: "SET_CURRENT_USER", payload: user };
+    return createAction("SET_CURRENT_USER", user);
 };
