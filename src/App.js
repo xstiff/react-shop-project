@@ -18,7 +18,8 @@ import {
     CheckForZero,
 } from "./store/cart/cart.selector";
 import { useSelector } from "react-redux";
-import { addItemToCart } from "./store/cart/cart.selector";
+// import { addItemToCart } from "./store/cart/cart.selector";
+
 const App = () => {
     const dispatch = useDispatch();
     // const cartSelector = useSelector((state) => state.cart);
