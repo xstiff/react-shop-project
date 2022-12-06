@@ -8,10 +8,17 @@ const Category = () => {
     const { category } = useParams();
     const categoriesMap = useSelector(getCategoriesMap);
     const products = categoriesMap[category];
-    console.log("Render");
+    // console.log("Render");
+    const titltes = {
+        hats: "hats",
+        jackets: "jackets",
+        sneakers: "sneakers",
+        womens: "women's",
+        mens: "men's",
+    };
     return (
         <>
-            <h1>{category.toUpperCase()}</h1>
+            <h1>{titltes[category].toUpperCase()}</h1>
             <div className="category-container">
                 {products &&
                     products.map((product) => (

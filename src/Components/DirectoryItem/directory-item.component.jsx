@@ -12,11 +12,20 @@ const DirectoryItem = (cat) => {
     const goShop = () => {
         Navigate(`./shop/${cat.title}`);
     };
+
+    const titltes = {
+        hats: "hats",
+        jackets: "jackets",
+        sneakers: "sneakers",
+        womens: "women's",
+        mens: "men's",
+    };
+
     return (
         <DirectoryItemContainer key={cat.id} onClick={goShop}>
             <BackgroundImage imageUrl={cat.cImage} />
             <Body>
-                <h2>{cat.title}</h2>
+                <h2>{titltes[cat.title]}</h2>
                 <p>Shop Now</p>
             </Body>
         </DirectoryItemContainer>
