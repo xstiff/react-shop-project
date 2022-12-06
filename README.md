@@ -12,7 +12,7 @@ Technologies:<br/>
 -   GRAPHQL (soon)
 -   STRIPE PAYMENTS (soon)
 
-<p>*   -   JUST IMPLEMENTED</p>
+<p>*   -   INCL. REDUX SAGA, REDUX THUNK, REDUX TOOLKIT, REDUX PERSIST</p>
 
 Features:
 
