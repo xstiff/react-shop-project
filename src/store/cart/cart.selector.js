@@ -1,19 +1,16 @@
 import { createAction } from "@reduxjs/toolkit";
 
-export const setIsCartOpen = (boolean) =>
-    createAction("SET_IS_CART_OPEN", boolean);
+export const setIsCartOpen = createAction("SET_IS_CART_OPEN");
 
-export const setselectedRemove = (val) =>
-    createAction("SET_SELECTED_REMOVE", val);
+export const setselectedRemove = createAction("SET_SELECTED_REMOVE");
 
-export const setconfirmVisible = (val) =>
-    createAction("SET_CONFIRM_VISIBLE", val);
+export const setconfirmVisible = createAction("SET_CONFIRM_VISIBLE");
 
-export const addItem = (val) => createAction("SET_CART_ITEMS", val);
+export const addItem = createAction("SET_CART_ITEMS");
 
-export const setcartCount = (val) => createAction("SET_CART_COUNT", val);
+export const setcartCount = createAction("SET_CART_COUNT");
 
-export const setcartTotal = (val) => createAction("SET_CART_TOTAL", val);
+export const setcartTotal = createAction("SET_CART_TOTAL");
 
 export const addItemToCart = (cartItems, product) =>
     addItem(IdSearch(cartItems, product));
