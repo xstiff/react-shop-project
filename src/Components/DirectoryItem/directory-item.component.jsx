@@ -17,8 +17,8 @@ const DirectoryItem = (cat) => {
         hats: "hats",
         jackets: "jackets",
         sneakers: "sneakers",
-        womens: "women's",
-        mens: "men's",
+        womens: "women",
+        mens: "men",
     };
 
     return (
@@ -26,7 +26,7 @@ const DirectoryItem = (cat) => {
             <BackgroundImage imageUrl={cat.cImage} />
             <Body>
                 <h2>{titltes[cat.title]}</h2>
-                <p>Shop Now</p>
+                {/* <p>Shop Now</p> */}
             </Body>
         </DirectoryItemContainer>
     );

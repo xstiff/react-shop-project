@@ -9,11 +9,14 @@ const CategoryPreview = ({ title, products }) => {
         hats: "hats",
         jackets: "jackets",
         sneakers: "sneakers",
-        womens: "women's",
-        mens: "men's",
+        womens: "women",
+        mens: "men",
     };
 
     const isLoading = useSelector(selectCategoriesIsLoading);
+
+    const link =
+        window.location.pathname === "/" ? `./shop/${title}` : `./${title}`;
 
     return (
         <>
@@ -21,13 +24,15 @@ const CategoryPreview = ({ title, products }) => {
                 <Spinner />
             ) : (
                 <div className="category-preview-container">
-                    <h2>
-                        <Link to={`./${title}`}>
+                    <Link to={link}>
+                        <h2>
                             <span className="title">
                                 {titltes[title].toUpperCase()}
                             </span>
-                        </Link>
-                    </h2>
+                            <span className="seemore">See more</span>
+                        </h2>
+                    </Link>
+
                     <div className="preview">
                         {products
                             .filter((_, idx) => idx < 4)

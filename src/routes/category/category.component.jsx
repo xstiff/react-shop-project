@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { getCategoriesMap } from "../../store/categories/categories.selector";
 import { selectCategoriesIsLoading } from "../../store/categories/categories.selector";
 import Spinner from "../../Components/Spinner/spinner.component";
-
+import { Link } from "react-router-dom";
 const Category = () => {
     const { category } = useParams();
     const categoriesMap = useSelector(getCategoriesMap);
@@ -15,15 +15,26 @@ const Category = () => {
         hats: "hats",
         jackets: "jackets",
         sneakers: "sneakers",
-        womens: "women's",
-        mens: "men's",
+        womens: "women",
+        mens: "men",
     };
 
     const isLoading = useSelector(selectCategoriesIsLoading);
 
     return (
         <>
-            <h1>{titltes[category].toUpperCase()}</h1>
+            <h1>
+                <span>
+                    <Link to="../../" className="pathing">
+                        Home&nbsp;/&nbsp;
+                    </Link>
+                    <Link to="../" className="pathing">
+                        Shop&nbsp;/
+                    </Link>
+                    &nbsp;
+                </span>
+                {titltes[category].toUpperCase()}
+            </h1>
             {isLoading ? (
                 <Spinner />
             ) : (

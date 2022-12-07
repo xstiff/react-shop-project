@@ -5,6 +5,12 @@ export const SpinnerOverlay = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    span {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
 `;
 
 export const SpinnerContainer = styled.div`

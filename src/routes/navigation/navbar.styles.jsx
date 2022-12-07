@@ -10,9 +10,16 @@ export const NavigationContainer = styled.div`
 `;
 
 export const LogoContainer = styled(Link)`
-    height: 100%;
-    width: 70px;
+    width: 120px;
     padding: 25px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    img {
+        margin-top: 15px;
+        width: 120px;
+        height: 120px;
+    }
 `;
 
 export const NavLinksContainer = styled.div`
@@ -21,9 +28,23 @@ export const NavLinksContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    font-size: 20px;
 `;
 
 export const NavLink = styled(Link)`
     padding: 10px 15px;
     cursor: pointer;
+`;
+
+export const Email = styled.span`
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -0%);
+    font-size: 15px;
+    color: gray;
+`;
+
+export const LogoutContainer = styled.div`
+    position: relative;
 `;

@@ -1,12 +1,36 @@
 .category-preview-container {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 100px;
 
-    .title {
-        font-size: 28px;
-        margin-bottom: 25px;
-        cursor: pointer;
+    h2 {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        &:hover > * {
+            color: rgb(24, 52, 71);
+        }
+
+        // background-color: red;
+        .title {
+            font-size: 28px;
+            // margin-bottom: 25px;
+
+            cursor: pointer;
+            text-decoration: underline;
+            width: 100%;
+        }
+
+        .seemore {
+            display: block;
+            font-size: 20px;
+            flex-basis: 100%;
+            width: 100%;
+        }
     }
 
     .preview {

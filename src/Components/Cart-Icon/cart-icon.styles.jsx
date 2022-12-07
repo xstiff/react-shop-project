@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const CartIconContainer = styled.div`
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     position: relative;
     display: flex;
     align-items: center;
@@ -11,12 +11,14 @@ export const CartIconContainer = styled.div`
 `;
 
 export const ShoppingIconImg = styled.img`
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
+    user-select: none;
 `;
 export const ItemCount = styled.span`
     position: absolute;
-    font-size: 10px;
+    font-size: 13px;
     font-weight: bold;
-    bottom: 12px;
+    bottom: 14px;
+    user-select: none;
 `;
