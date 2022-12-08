@@ -1,23 +1,21 @@
-import {
-  SignInWithGooglePopup,
-  SignInWithGoogleRedirect,
-  auth,
-} from "../../utils/firebase/firebase.utils";
-import { useEffect } from "react";
-import { getRedirectResult } from "firebase/auth";
-import { createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
 import SignUp from "../../Components/SignUpForm/signupform.component";
-import FormInput from "../../Components/FormInput/forminput.component";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../store/user/user.selector";
 import "./sign-in.styles.scss";
 import LogIn from "../../Components/Log-in/Log-in.component";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
-  return (
-    <div className="LoginContainer">
-      <LogIn />
-      <SignUp />
-    </div>
-  );
+    const navigate = useNavigate();
+    const user = useSelector(selectCurrentUser);
+
+    return (
+        <div className="LoginContainer">
+            {user && navigate("../")}
+            <LogIn />
+            <SignUp />
+        </div>
+    );
 };
 
 export default SignIn;

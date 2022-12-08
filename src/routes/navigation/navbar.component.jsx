@@ -16,14 +16,23 @@ import {
 } from "./navbar.styles";
 import { selectCurrentUser } from "../../store/user/user.selector";
 import { useSelector } from "react-redux";
-
+import { useDispatch } from "react-redux";
+import {
+    setAlertVisibility,
+    setAlertType,
+} from "../../store/alert/alert.acitions";
 const Nav = () => {
     const currentUser = useSelector(selectCurrentUser);
     const cartSelector = useSelector((state) => state.cart);
-
+    const dispatch = useDispatch();
     const getStringFromEmail = (emailAddress) =>
         emailAddress.substring(0, emailAddress.indexOf("@"));
 
+    const SignOutUser = () => {
+        UserSignOut();
+        dispatch(setAlertType("out"));
+        dispatch(setAlertVisibility(true));
+    };
     return (
         <Fragment>
             <NavigationContainer>
@@ -34,7 +43,9 @@ const Nav = () => {
                     <NavLink to="/shop">Shop</NavLink>
                     {currentUser ? (
                         <LogoutContainer>
-                            <NavLink onClick={UserSignOut}>Log out</NavLink>
+                            <NavLink onClick={SignOutUser} to="/">
+                                Log out
+                            </NavLink>
                             <Email>
                                 ({getStringFromEmail(currentUser.email)})
                             </Email>

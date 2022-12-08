@@ -3,6 +3,7 @@ import CategoriesPreview from "../categories-preview/categories-preview.componen
 import { useDispatch } from "react-redux";
 import { fetchCategoriesAsync } from "../../store/categories/categories.action";
 import { useEffect } from "react";
+import Alert from "../../Components/Alert/alert.component";
 const Home = () => {
     const categories = [
         {
@@ -42,10 +43,11 @@ const Home = () => {
         dispatch(fetchCategoriesAsync());
     }, []);
     return (
-        <div>
+        <>
+            <Alert />
             <Categories cats={categories} />
             <CategoriesPreview />
-        </div>
+        </>
     );
 };
 

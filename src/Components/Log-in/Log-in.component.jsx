@@ -5,14 +5,17 @@ import {
     auth,
     SignInWithGooglePopup,
 } from "../../utils/firebase/firebase.utils";
-import { createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
-import { useContext, useState } from "react";
+
+import { useState } from "react";
 import { EmailAndPasswordSignIn } from "../../utils/firebase/firebase.utils";
-import { checkAuth } from "../../utils/firebase/firebase.utils";
+
 import { BUTTON_TYPE_CLASSES } from "../Button/button.component";
-
+import {
+    setAlertVisibility,
+    setAlertType,
+} from "../../store/alert/alert.acitions.js";
 import { LoginContainer, ButtonsContainer } from "./Log-in.styles.jsx";
-
+import { useDispatch } from "react-redux";
 const logGoogleUser = async () => {
     await SignInWithGooglePopup();
 };
@@ -23,6 +26,7 @@ const defLoginForm = {
 };
 
 const LogIn = () => {
+    const dispatch = useDispatch();
     const [LoginForm, setLoginForm] = useState(defLoginForm);
 
     const handleChange = (e) => {
@@ -46,8 +50,10 @@ const LogIn = () => {
             );
 
             if (response) {
-                alert(`Success! ${response.user.email}`);
+                // alert(`Success! ${response.user.email}`);
                 ClearLogin();
+                dispatch(setAlertType("in"));
+                dispatch(setAlertVisibility(true));
             }
         } catch (error) {
             switch (error.code) {
@@ -106,9 +112,9 @@ const LogIn = () => {
                 </ButtonsContainer>
             </form>
 
-            <button onClick={checkAuth}>
+            {/* <button onClick={checkAuth}>
                 <p>Check auth status</p>
-            </button>
+            </button> */}
         </LoginContainer>
     );
 };

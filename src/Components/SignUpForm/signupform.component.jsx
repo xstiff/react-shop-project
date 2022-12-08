@@ -6,7 +6,11 @@ import {
 import FormInput from "../FormInput/forminput.component";
 import Button from "../Button/button.component";
 import { SignUpContainer } from "./signupform.styles.jsx";
-
+import { useDispatch } from "react-redux";
+import {
+    setAlertType,
+    setAlertVisibility,
+} from "../../store/alert/alert.acitions";
 const defformFields = {
     displayName: "",
     email: "",
@@ -15,7 +19,7 @@ const defformFields = {
 };
 const SignUp = () => {
     const [formFields, setFormFields] = useState(defformFields);
-
+    const dispatch = useDispatch();
     const resetForm = () => {
         setFormFields(defformFields);
     };
@@ -42,7 +46,9 @@ const SignUp = () => {
             const { user } = response;
             await createUserDocumentFromAuth(user, { displayName });
 
-            console.log("success: ", response);
+            // console.log("success: ", response);
+            dispatch(setAlertType("reg"));
+            dispatch(setAlertVisibility(true));
             return resetForm();
         } catch (error) {
             if (error) {

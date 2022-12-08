@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchCategoriesAsync } from "../../store/categories/categories.action";
 import { Link } from "react-router-dom";
-import Spinner from "../../Components/Spinner/spinner.component";
+
 const SHOP = () => {
     const dispatch = useDispatch();
     const { categoriesMap } = useSelector((state) => state.categories);
