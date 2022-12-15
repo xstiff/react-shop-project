@@ -35,7 +35,7 @@ const Home = () => {
             id: 5,
             title: "mens",
             imageUrl:
-                "https://pixabay.com/get/gce81cf1e2319b5ec26062e9984093e40c6e60387c2eece5b5fffd6dccdd2f05b4e314a4a35d7292741754973040f859aa0050700e6345649558d55de8a72cbc20c35c88de3a7df0e03cab2b83e74584f_1920.jpg",
+                "https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg?cs=srgb&dl=pexels-chloe-1043473.jpg&fm=jpg",
         },
     ];
     const dispatch = useDispatch();
