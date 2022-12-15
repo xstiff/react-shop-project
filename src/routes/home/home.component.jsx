@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { fetchCategoriesAsync } from "../../store/categories/categories.action";
 import { useEffect } from "react";
 import Alert from "../../Components/Alert/alert.component";
+import { FETCH_CATEGORIES_START } from "../../store/categories/categories.action";
 const Home = () => {
     const categories = [
         {
@@ -28,7 +29,7 @@ const Home = () => {
             id: 4,
             title: "womens",
             imageUrl:
-                "https://pixabay.com/get/g73d97108be934e49f5610b0bf771c39ebc70bc7fecc96473b6105946fe07de139ccfd577d4a31cd3473f423790a97f341ce4fc9f020b4e20e074d08f49211ff9b2adebca594681aed1670e0105e221ad_1920.jpg",
+                "https://pixabay.com/get/gf50470f3dab05f517133135d0b6dae8057ec08279ddb215f651112ca2df9ba3f3c7616c09a6b5a68894b35aa12640b82f31d13ff267b19c8cfc65b5e4806b88e94a1f9f7f073630b1ccdfe4202ccb391_1920.jpg",
         },
         {
             id: 5,
@@ -40,7 +41,7 @@ const Home = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchCategoriesAsync());
+        dispatch(FETCH_CATEGORIES_START());
     }, []);
     return (
         <>

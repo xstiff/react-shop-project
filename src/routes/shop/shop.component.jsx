@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchCategoriesAsync } from "../../store/categories/categories.action";
+import { FETCH_CATEGORIES_START } from "../../store/categories/categories.action";
 import { Link } from "react-router-dom";
 
 const SHOP = () => {
@@ -14,7 +15,7 @@ const SHOP = () => {
     const { categoriesMap } = useSelector((state) => state.categories);
 
     useEffect(() => {
-        categoriesMap && dispatch(fetchCategoriesAsync());
+        categoriesMap && dispatch(FETCH_CATEGORIES_START());
     }, []);
 
     return (
