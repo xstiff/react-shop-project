@@ -29,7 +29,7 @@ const Home = () => {
             id: 4,
             title: "womens",
             imageUrl:
-                "https://pixabay.com/get/gf50470f3dab05f517133135d0b6dae8057ec08279ddb215f651112ca2df9ba3f3c7616c09a6b5a68894b35aa12640b82f31d13ff267b19c8cfc65b5e4806b88e94a1f9f7f073630b1ccdfe4202ccb391_1920.jpg",
+                "https://cdn.pixabay.com/photo/2017/08/03/15/27/beautiful-2576846_960_720.jpg",
         },
         {
             id: 5,

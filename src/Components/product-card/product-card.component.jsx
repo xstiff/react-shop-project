@@ -16,6 +16,7 @@ const ProductCard = ({ product }) => {
 
     const Add = () => {
         console.log(` Adding: ${product.id}`);
+        alert(`Added ${product.name} to cart!`)
         return dispatch(addItemToCart(cartItems, product));
     };
 
