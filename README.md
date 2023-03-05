@@ -21,4 +21,3 @@ Features:
 
 <h1>Demo: <a href='https://jdclothing-store.netlify.app'>CLICK ME</a></h1>
 <br /> Test User => test@gmail.com : 123123
-<br/>Very early deploy.
