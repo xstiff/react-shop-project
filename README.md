@@ -21,3 +21,4 @@ Features:
 
 <h1>Demo: <a href='https://jdclothing-store.netlify.app'>CLICK ME</a></h1>
 <br /> Test User => test@gmail.com : 123123
+<i> at the moment logging in doesn't change anything except that your name is visible at menu </br> im working on order managing page</i>
