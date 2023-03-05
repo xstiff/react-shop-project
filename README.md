@@ -3,16 +3,13 @@
 Technologies:<br/>
 
 -   REACT<br/>
--   JS ( soon app will be migrated to TypeScript )
+-   JS
 -   SCSS
 -   REST API
 -   FIREBASE
 -   STYLED COMPONENTS
--   REDUX\*
--   GRAPHQL (soon)
--   STRIPE PAYMENTS (soon)
+-   REDUX
 
-<p>*   -   INCL. REDUX SAGA, REDUX THUNK, REDUX TOOLKIT, REDUX PERSIST</p>
 
 Features:
 
@@ -21,7 +18,6 @@ Features:
 -   Working Login/Register/Google
 -   Working Categories
 -   Everything stored in Firebase and accessing them real time ( prodcuts and users )
-    <br />soon more....
 
 <h1>Demo: <a href='https://jdclothing-store.netlify.app'>CLICK ME</a></h1>
 <br /> Test User => test@gmail.com : 123123
