@@ -101,14 +101,6 @@ const LogIn = () => {
                     <Button type="submit">
                         <p>Login</p>
                     </Button>
-
-                    <Button
-                        buttonType={BUTTON_TYPE_CLASSES.google}
-                        type="button"
-                        onClick={logGoogleUser}
-                    >
-                        <p>Login with Google</p>
-                    </Button>
                 </ButtonsContainer>
             </form>
 

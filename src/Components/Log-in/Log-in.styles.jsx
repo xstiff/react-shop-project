@@ -15,7 +15,6 @@ export const ButtonsContainer = styled.div`
     justify-content: center;
     align-content: center;
     flex-wrap: nowrap;
-    background-color: red;
 
     button {
         float: left;
